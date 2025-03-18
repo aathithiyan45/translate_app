@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="translator-card">
+        <div class="language-controls">
+            <select id="target-language" class="language-select">
+                {% for code, name in languages.items %}
+                <option value="{{ code }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+            <button id="swap-languages" class="swap-btn">
+                <i class="fas fa-exchange-alt"></i>
+            </button>
+            <select id="source-language" class="language-select" disabled>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <div class="text-areas">
+            <div class="text-box source">
+                <textarea id="source-text" placeholder="Enter text to translate..."></textarea>
+                <div class="controls">
+                    <button id="voice-input-btn" class="secondary-btn">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button id="clear-source" class="secondary-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <span class="char-count">0 characters</span>
+                </div>
+            </div>
+            
+            <div class="text-box target">
+                <textarea id="translated-text" placeholder="Translation will appear here..." readonly></textarea>
+                <div class="controls">
+                    <button id="translate-btn" class="primary-btn">
+                        <i class="fas fa-language"></i> Translate
+                    </button>
+                    <button id="copy-translation" class="secondary-btn">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="history-section">
+        <h2>Translation History</h2>
+        <div id="history-list">
+            {% if history %}
+                {% for item in history %}
+                <div class="history-item" data-original="{{ item.original }}">
+                    <div class="original-text">{{ item.original }}</div>
+                    <div class="translated-text">{{ item.translated }}</div>
+                    <button class="delete-btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    <span class="timestamp" style="display: none;">{{ item.timestamp }}</span>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="empty-state">
+                    <i class="fas fa-history"></i>
+                    <p>No translation history yet</p>
+                    <p>Your recent translations will appear here</p>
+                </div>
+            {% endif %}
+        </div>
+        {% if history %}
+        <div class="controls" style="margin-top: 20px;">
+            <button id="clear-history-btn" class="secondary-btn">
+                <i class="fas fa-trash-alt"></i> Clear History
+            </button>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<div id="status-message" class="status-message"></div>
+{% endblock %}

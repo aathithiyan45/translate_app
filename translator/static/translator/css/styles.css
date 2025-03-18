@@ -1,0 +1,303 @@
+
+:root {
+    --primary-color: #4285f4;
+    --secondary-color: #8ab4f8;
+    --background-color: #202124;
+    --card-background: #303134;
+    --text-color: #e8eaed;
+    --border-color: #5f6368;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+    --input-background: #303134;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+.navbar {
+    background: var(--primary-color);
+    padding: 1rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.translator-card {
+    background: var(--card-background);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.language-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+.language-controls select {
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    font-size: 16px;
+    appearance: none;
+}
+
+.text-areas {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.text-box {
+    flex: 1;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: var(--input-background);
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    color: var(--text-color);
+    resize: none;
+}
+
+textarea::placeholder {
+    color: #9aa0a6;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.swap-btn {
+    align-self: center;
+    background: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.swap-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Update history section for dark theme */
+.history-section {
+    background: var(--card-background);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.history-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.empty-state {
+    color: #9aa0a6;
+}
+
+.empty-state i {
+    color: var(--border-color);
+}
+
+.char-count {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.status-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.status-message.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.status-message.success {
+    background: var(--success-color);
+    color: white;
+}
+
+.status-message.error {
+    background: var(--error-color);
+    color: white;
+}
+
+.status-message.info {
+    background: var(--primary-color);
+    color: white;
+}
+
+.history-section {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.history-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.delete-btn {
+    color: var(--error-color);
+    background: none;
+    padding: 8px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .text-areas {
+        flex-direction: column;
+    }
+    
+    .swap-btn {
+        transform: rotate(90deg);
+        margin: 10px auto;
+    }
+    
+    .history-item {
+        grid-template-columns: 1fr;
+    }
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
