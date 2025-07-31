@@ -1,0 +1,50 @@
+[
+  {
+    "original": "mother",
+    "translated": "mother",
+    "language": "es",
+    "timestamp": "2025-07-31T14:25:16.455611"
+  },
+  {
+    "original": "mother",
+    "translated": "அம்மா",
+    "language": "ta",
+    "timestamp": "2025-07-31T14:25:21.315791"
+  },
+  {
+    "original": "mother",
+    "translated": "妈妈",
+    "language": "zh",
+    "timestamp": "2025-07-31T14:25:27.739467"
+  },
+  {
+    "original": "father",
+    "translated": "padre",
+    "language": "es",
+    "timestamp": "2025-07-31T14:32:16.265911"
+  },
+  {
+    "original": "father",
+    "translated": "அப்பா",
+    "language": "ta",
+    "timestamp": "2025-07-31T14:32:21.684972"
+  },
+  {
+    "original": "layout",
+    "translated": "தளவமைப்பு",
+    "language": "ta",
+    "timestamp": "2025-07-31T14:32:32.159484"
+  },
+  {
+    "original": "feed",
+    "translated": "ஃபீட்",
+    "language": "ta",
+    "timestamp": "2025-07-31T14:32:41.975197"
+  },
+  {
+    "original": "mother",
+    "translated": "mother",
+    "language": "es",
+    "timestamp": "2025-07-31T14:33:10.775366"
+  }
+]

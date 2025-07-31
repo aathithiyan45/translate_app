@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    {% load static %}
+    <style>
+        .navbar {
+            background-color: #4CAF50;
+            padding: 12px 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    
+        .nav-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        .nav-brand {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    
+        .nav-brand i {
+            font-size: 20px;
+        }
+    
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+    
+        .auth-btn, .logout-btn {
+            background-color: white;
+            color: #4CAF50;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
+        }
+    
+        .auth-btn:hover, .logout-btn:hover {
+            background-color: #e6e6e6;
+        }
+    
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    
+        .user-avatar {
+            background-color: white;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 14px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+    
+        @media screen and (max-width: 600px) {
+            .nav-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+    
+            .nav-links {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <style>
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+    
+        .translator-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+    
+        .language-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+    
+        .language-select {
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            flex: 1;
+        }
+    
+        .swap-btn {
+            background: #f0f0f0;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+    
+        .swap-btn:hover {
+            background: #e0e0e0;
+        }
+    
+        .text-areas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+    
+        .text-box {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .text-box textarea {
+            height: 160px;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            font-family: inherit;
+        }
+    
+        .text-box .controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 8px;
+        }
+    
+        .primary-btn, .secondary-btn {
+            border: none;
+            padding: 10px 14px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.3s;
+        }
+    
+        .primary-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+    
+        .primary-btn:hover {
+            background-color: #45a049;
+        }
+    
+        .secondary-btn {
+            background-color: #e7e7e7;
+            color: #333;
+        }
+    
+        .secondary-btn:hover {
+            background-color: #d4d4d4;
+        }
+    
+        .char-count {
+            font-size: 12px;
+            color: #888;
+        }
+    
+        .history-section {
+            margin-top: 40px;
+        }
+    
+        .history-section h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+    
+        .history-item {
+            background: #fafafa;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            position: relative;
+            border: 1px solid #ddd;
+        }
+    
+        .history-item .original-text {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    
+        .history-item .translated-text {
+            color: #555;
+        }
+    
+        .history-item .delete-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #c00;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        .empty-state {
+            text-align: center;
+            color: #aaa;
+            padding: 40px 0;
+        }
+    
+        .empty-state i {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+    
+        .controls {
+            text-align: right;
+        }
+    
+        #status-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #323232;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            display: none;
+            z-index: 999;
+        }
+    
+        @media screen and (max-width: 768px) {
+            .text-areas {
+                grid-template-columns: 1fr;
+            }
+    
+            .language-controls {
+                flex-direction: column;
+            }
+    
+            .controls {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="{% url 'index' %}" class="nav-brand">
+                <i class="fas fa-language"></i> Translator
+            </a>
+            <div class="nav-links">
+                {% if user.is_authenticated %}
+                    <div class="user-info">
+                        <div class="user-avatar">{{ user.username|first|upper }}</div>
+                        <a href="{% url 'logout' %}" class="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </div>
+                {% else %}
+                    <a href="{% url 'login' %}" class="auth-btn">Sign in</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'translator/js/main.js' %}"></script>
+</body>
+</html>
