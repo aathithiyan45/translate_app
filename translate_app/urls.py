@@ -22,10 +22,8 @@ from translator import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('translator.urls')),
-<<<<<<< HEAD
-   
-=======
+
     path('accounts/login/', views.login_view, name='login'),
     path('accounts/logout/', views.logout_view, name='logout'),  # Use our custom logout view
->>>>>>> 08ca595adb9b178559aa1266ac2a96eea0d2f568
+
 ]
