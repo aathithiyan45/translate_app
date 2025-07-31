@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "original": "mother",
     "translated": "mother",
     "language": "es",
@@ -22,11 +23,30 @@
     "translated": "padre",
     "language": "es",
     "timestamp": "2025-07-31T14:32:16.265911"
+=======
+    "original": "who are you?",
+    "translated": "நீங்கள் யார்",
+    "language": "ta",
+    "timestamp": "2025-03-14T10:11:56.323313"
+  },
+  {
+    "original": "welcome",
+    "translated": "A la orden",
+    "language": "es",
+    "timestamp": "2025-03-14T11:02:54.156299"
+  },
+  {
+    "original": "welcome",
+    "translated": "வரவேற்கிறேன்",
+    "language": "ta",
+    "timestamp": "2025-03-14T11:02:58.063590"
+>>>>>>> 08ca595adb9b178559aa1266ac2a96eea0d2f568
   },
   {
     "original": "father",
     "translated": "அப்பா",
     "language": "ta",
+<<<<<<< HEAD
     "timestamp": "2025-07-31T14:32:21.684972"
   },
   {
@@ -40,11 +60,144 @@
     "translated": "ஃபீட்",
     "language": "ta",
     "timestamp": "2025-07-31T14:32:41.975197"
+=======
+    "timestamp": "2025-03-14T11:03:20.199360"
+  },
+  {
+    "original": "mother",
+    "translated": "அம்மா",
+    "language": "ta",
+    "timestamp": "2025-03-14T11:03:51.231739"
+  },
+  {
+    "original": "who are you",
+    "translated": "நீங்கள் யார்",
+    "language": "ta",
+    "timestamp": "2025-03-14T11:03:59.176476"
+  },
+  {
+    "original": "how are you",
+    "translated": "",
+    "language": "ta",
+    "timestamp": "2025-03-14T11:04:11.626785"
+  },
+  {
+    "original": "how are you",
+    "translated": "",
+    "language": "ta",
+    "timestamp": "2025-03-14T11:04:17.072984"
+  },
+  {
+    "original": "how are you",
+    "translated": "",
+    "language": "ta",
+    "timestamp": "2025-03-14T11:04:23.927626"
+  },
+  {
+    "original": "how are you",
+    "translated": "",
+    "language": "ta",
+    "timestamp": "2025-03-14T11:04:37.459208"
+  },
+  {
+    "original": "who are you?",
+    "translated": "quien sos?",
+    "language": "es",
+    "timestamp": "2025-03-18T14:53:23.508074"
+  },
+  {
+    "original": "who are you?",
+    "translated": "நீங்கள் யார்",
+    "language": "ta",
+    "timestamp": "2025-03-18T14:53:41.058439"
+  },
+  {
+    "original": "YouTube",
+    "translated": "YouTube",
+    "language": "ta",
+    "timestamp": "2025-03-18T14:54:15.661363"
+  },
+  {
+    "original": "hi",
+    "translated": "hola",
+    "language": "es",
+    "timestamp": "2025-03-18T14:57:27.381899"
+  },
+  {
+    "original": "hai",
+    "translated": "",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:00:14.202143"
+  },
+  {
+    "original": "who",
+    "translated": "",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:01:15.963972"
+  },
+  {
+    "original": "father",
+    "translated": "padre",
+    "language": "es",
+    "timestamp": "2025-03-18T15:02:33.525271"
+  },
+  {
+    "original": "father",
+    "translated": "அப்பா",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:02:37.658993"
+  },
+  {
+    "original": "mother",
+    "translated": "அம்மா",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:03:25.075004"
+  },
+  {
+    "original": "mother",
+    "translated": "அம்மா",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:05:51.958396"
+  },
+  {
+    "original": "mother",
+    "translated": "அம்மா",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:09:14.057465"
+  },
+  {
+    "original": "mother",
+    "translated": "அம்மா",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:09:18.608945"
+  },
+  {
+    "original": "mother",
+    "translated": "அம்மா",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:09:19.692794"
+  },
+  {
+    "original": "mother",
+    "translated": "அம்மா",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:09:21.126646"
+>>>>>>> 08ca595adb9b178559aa1266ac2a96eea0d2f568
   },
   {
     "original": "mother",
     "translated": "mother",
     "language": "es",
+<<<<<<< HEAD
     "timestamp": "2025-07-31T14:33:10.775366"
+=======
+    "timestamp": "2025-03-18T15:13:22.160279"
+  },
+  {
+    "original": "mother",
+    "translated": "அம்மா",
+    "language": "ta",
+    "timestamp": "2025-03-18T15:13:30.638991"
+>>>>>>> 08ca595adb9b178559aa1266ac2a96eea0d2f568
   }
 ]

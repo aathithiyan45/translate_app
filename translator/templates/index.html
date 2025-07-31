@@ -4,24 +4,19 @@
 <div class="container">
     <div class="translator-card">
         <div class="language-controls">
-            <!-- Source Language on the left -->
-            <select id="source-language" class="language-select" disabled>
-                <option value="en">English</option>
-            </select>
-        
-            <!-- Swap Button in the center -->
-            <button id="swap-languages" class="swap-btn" title="Swap Languages">
-                <i class="fas fa-exchange-alt"></i>
-            </button>
-        
-            <!-- Target Language on the right -->
             <select id="target-language" class="language-select">
                 {% for code, name in languages.items %}
                 <option value="{{ code }}">{{ name }}</option>
                 {% endfor %}
             </select>
+            <button id="swap-languages" class="swap-btn">
+                <i class="fas fa-exchange-alt"></i>
+            </button>
+            <select id="source-language" class="language-select" disabled>
+                <option value="en">English</option>
+            </select>
         </div>
-        
+
         <div class="text-areas">
             <div class="text-box source">
                 <textarea id="source-text" placeholder="Enter text to translate..."></textarea>
